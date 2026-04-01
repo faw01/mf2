@@ -12,7 +12,7 @@
     "@t3-oss/env-nextjs": "^0.13.11",
     "react": "19.2.4",
     "zod": "^4.3.6",
-    "expo-notifications": "55.0.13",
+    "expo-notifications": "55.0.14",
     "expo-device": "55.0.10",
     "expo-constants": "55.0.9"
   },
