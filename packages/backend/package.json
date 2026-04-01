@@ -44,7 +44,7 @@
     "@convex-dev/eslint-plugin": "^1.2.1",
     "@edge-runtime/vm": "^5.0.0",
     "@repo/typescript-config": "workspace:*",
-    "convex-test": "^0.0.44",
+    "convex-test": "^0.0.46",
     "typescript": "^6.0.2",
     "vitest": "^4.1.1"
   }
