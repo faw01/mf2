@@ -26,7 +26,7 @@
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.69",
     "@ai-sdk/cohere": "^3.0.30",
-    "@ai-sdk/devtools": "^0.0.15",
+    "@ai-sdk/devtools": "^0.0.17",
     "@ai-sdk/gateway": "^3.0.95",
     "@perplexity-ai/ai-sdk": "^0.1.2",
     "@t3-oss/env-nextjs": "^0.13.11",
