@@ -1,0 +1,25 @@
+{
+  "name": "@repo/email",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "typecheck": "tsgo --noEmit"
+  },
+  "dependencies": {
+    "@react-email/components": "1.0.12",
+    "@react-email/render": "2.0.6",
+    "@t3-oss/env-nextjs": "^0.13.11",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "resend": "^6.16.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "25.7.0",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "typescript": "^6.0.3"
+  }
+}

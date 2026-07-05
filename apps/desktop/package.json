@@ -1,0 +1,46 @@
+{
+  "name": "desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Desktop application powered by Electron",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "bun scripts/dev.ts",
+    "dev:preview": "electron-vite preview",
+    "build": "electron-vite build",
+    "build:unpack": "electron-vite build && electron-builder --dir",
+    "build:mac": "electron-vite build && electron-builder --mac",
+    "build:win": "electron-vite build && electron-builder --win",
+    "build:linux": "electron-vite build && electron-builder --linux",
+    "postinstall": "node -e \"require('electron')\" && electron-builder install-app-deps || echo \"desktop postinstall: skipped the Electron binary download or the native dependency rebuild because a step failed. Recover with: rm -rf node_modules && bun install\"",
+    "clean": "git clean -xdf .cache .turbo out release node_modules",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json --composite false && tsc --noEmit -p tsconfig.web.json --composite false"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^4.0.0",
+    "@repo/convex": "workspace:*",
+    "@repo/design-system": "workspace:*",
+    "convex": "^1.42.1",
+    "electron-updater": "^6.8.9",
+    "lucide-react": "^1.23.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-router": "^8.1.0"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.3.2",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^25.7.0",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "electron": "43.0.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^6.0.0-beta.0",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^4.3.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.1.3"
+  }
+}
