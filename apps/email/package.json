@@ -17,7 +17,7 @@
   "devDependencies": {
     "@react-email/ui": "6.6.5",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "25.7.0",
+    "@types/node": "26.1.0",
     "@types/react": "19.2.17",
     "next": "16.2.10",
     "typescript": "^6.0.3"
