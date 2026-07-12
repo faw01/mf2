@@ -1,0 +1,30 @@
+{
+  "name": "@repo/payments",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "typecheck": "tsgo --noEmit"
+  },
+  "dependencies": {
+    "@stripe/agent-toolkit": "^0.9.0",
+    "@t3-oss/env-nextjs": "^0.13.11",
+    "react-native-purchases": "^10.4.1",
+    "react-native-purchases-ui": "^10.4.1",
+    "server-only": "^0.0.1",
+    "stripe": "^22.3.0",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "react-native": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-native": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^6.0.3"
+  }
+}

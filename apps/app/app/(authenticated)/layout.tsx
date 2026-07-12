@@ -1,0 +1,39 @@
+import { auth, currentUser } from "@repo/auth/server";
+import { SidebarProvider } from "@repo/design-system/components/ui/sidebar";
+import { showBetaFeature } from "@repo/feature-flags";
+import type { ReactNode } from "react";
+import { NotificationsProvider } from "./components/notifications-provider";
+import { GlobalSidebar } from "./components/sidebar";
+
+type AppLayoutProperties = {
+  readonly children: ReactNode;
+};
+
+const AppLayout = async ({ children }: AppLayoutProperties) => {
+  const [user, { redirectToSignIn }, betaFeature] = await Promise.all([
+    currentUser(),
+    auth(),
+    showBetaFeature(),
+  ]);
+
+  if (!user) {
+    return redirectToSignIn();
+  }
+
+  return (
+    <NotificationsProvider userId={user.id}>
+      <SidebarProvider>
+        <GlobalSidebar>
+          {betaFeature ? (
+            <div className="m-4 rounded-full bg-blue-500 p-1.5 text-center text-sm text-white">
+              Beta feature now available
+            </div>
+          ) : null}
+          {children}
+        </GlobalSidebar>
+      </SidebarProvider>
+    </NotificationsProvider>
+  );
+};
+
+export default AppLayout;

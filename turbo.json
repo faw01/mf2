@@ -1,0 +1,55 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "ui": "tui",
+  "envMode": "loose",
+  "concurrency": "16",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build", "test"],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "**/generated/**",
+        "storybook-static/**",
+        ".react-email/**",
+        "out/**"
+      ]
+    },
+    "codegen": {
+      "outputs": ["convex/_generated/**"]
+    },
+    "test": {
+      "dependsOn": ["^test", "codegen"]
+    },
+    "typecheck": {},
+    "convex-lint": {
+      "dependsOn": ["codegen"]
+    },
+    "analyze": {
+      "dependsOn": ["^analyze"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "dev:mobile": {
+      "cache": false,
+      "persistent": true
+    },
+    "translate": {
+      "dependsOn": ["^translate"],
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
+    },
+    "//#check": {},
+    "//#fix": {
+      "cache": false
+    }
+  }
+}
